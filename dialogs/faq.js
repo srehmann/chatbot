@@ -20,6 +20,7 @@ library.dialog('/', [
             console.log(JSON.stringify(data));
             if(data.answers) {
                 session.send(data.answers[0].answer);
+                session.endDialog();
             }
         });
     }

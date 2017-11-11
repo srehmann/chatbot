@@ -52,9 +52,7 @@ module.exports = [
                 var message = new builder.Message()
                     .attachmentLayout(builder.AttachmentLayout.carousel)
                     .attachments(hotels.map(hotelAsAttachment));
-
                 session.send(message);
-                session.beginDialog(':help');
                 // End
                 session.endDialog();
             });

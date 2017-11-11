@@ -6,7 +6,7 @@ const library = new builder.Library('resetPassword');
 library.dialog('/', [
         (session) => {
             session.beginDialog('validators:consumerno', {
-                prompt: 'Please enter your consumer no:',
+                prompt: 'Please enter your consumer no: (valid value is 123456789; retry attempts:2)',
                 retryPrompt: 'We could not find the provided consumer no. Please try again.',
                 maxRetries: 2
             });
@@ -18,7 +18,7 @@ library.dialog('/', [
             return;
         }
         session.beginDialog('validators:phonenumber', {
-            prompt: 'Please enter your phone number:',
+            prompt: 'Please enter your phone number: (foramt (xyz) xyz-wxyz)',
             retryPrompt: 'The value entered is not phone number. Please try again using the following format (xyz) xyz-wxyz:',
             maxRetries: 2
         });
